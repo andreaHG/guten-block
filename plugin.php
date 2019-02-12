@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: ahg-guten — CGB Gutenberg Block Plugin
+ * Plugin Name: Custom Block - Staff Member
  * Plugin URI: https://github.com/ahmadawais/create-guten-block/
- * Description: ahg-guten — is a Gutenberg plugin created via create-guten-block.
- * Author: mrahmadawais, maedahbatool
- * Author URI: https://AhmadAwais.com/
+ * Description: A custom Gutenberg plugin created via create-guten-block.
+ * Author: Andrea Hernandez Guzman
+ * Author URI: https://andreahg.me/
  * Version: 1.0.0
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
