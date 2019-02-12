@@ -1,0 +1,143 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+[class*="ahg-"] form[class*="-link"],
+form[class*="ahg-"][class*="-link"],
+[class*="ahg-"] + form[class*="-link"] {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+
+/**
+ * For blocks with a box outline, we can use the custom properties:
+ * --box-padding-vert
+ * --box-padding-hori
+ * to get the current padding values
+ */
+[data-type^="ahg/"][data-align="full"]
++ [data-type^="ahg/"][data-align="full"] {
+  margin-top: -32px; }
+
+.ahg--shadow-0,
+.ahg-shadow-0 {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important; }
+
+.ahg--shadow-1,
+.ahg-shadow-1 {
+  -webkit-box-shadow: 0 0 0 1px rgba(120, 120, 120, 0.1) !important;
+          box-shadow: 0 0 0 1px rgba(120, 120, 120, 0.1) !important; }
+
+.ahg--shadow-2,
+.ahg-shadow-2 {
+  -webkit-box-shadow: 0 0 0 2px rgba(120, 120, 120, 0.1) !important;
+          box-shadow: 0 0 0 2px rgba(120, 120, 120, 0.1) !important; }
+
+.ahg--shadow-3,
+.ahg-shadow-3 {
+  -webkit-box-shadow: 0 5px 5px 0 rgba(18, 63, 82, 0.035), 0 0 0 1px rgba(176, 181, 193, 0.2);
+          box-shadow: 0 5px 5px 0 rgba(18, 63, 82, 0.035), 0 0 0 1px rgba(176, 181, 193, 0.2); }
+
+.ahg--shadow-4,
+.ahg-shadow-4 {
+  -webkit-box-shadow: 0px 2px 20px rgba(153, 153, 153, 0.2) !important;
+          box-shadow: 0px 2px 20px rgba(153, 153, 153, 0.2) !important; }
+
+.ahg--shadow-5,
+.ahg-shadow-5 {
+  -webkit-box-shadow: 0 5px 30px -10px rgba(18, 63, 82, 0.3) !important;
+          box-shadow: 0 5px 30px -10px rgba(18, 63, 82, 0.3) !important; }
+
+.ahg--shadow-6,
+.ahg-shadow-6 {
+  -webkit-box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05) !important;
+          box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05) !important; }
+
+.ahg--shadow-7,
+.ahg-shadow-7 {
+  -webkit-box-shadow: 7px 5px 30px rgba(72, 73, 121, 0.15) !important;
+          box-shadow: 7px 5px 30px rgba(72, 73, 121, 0.15) !important; }
+
+.ahg--shadow-8,
+.ahg-shadow-8 {
+  -webkit-box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1) !important;
+          box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1) !important; }
+
+.ahg--shadow-9,
+.ahg-shadow-9 {
+  -webkit-box-shadow: 0px 70px 130px -60px rgba(72, 73, 121, 0.38) !important;
+          box-shadow: 0px 70px 130px -60px rgba(72, 73, 121, 0.38) !important; }
+
+.ahg--content-width .ahg-content-wrapper,
+.ahg-content-width .ahg-content-wrapper {
+  max-width: var(--content-width);
+  margin: 0 auto; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.ahg-card {
+  border-radius: 4px;
+  margin: 30px 0;
+  overflow: hidden;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  -webkit-box-shadow: 0 5px 5px 0 rgba(18, 63, 82, 0.035), 0 0 0 1px rgba(176, 181, 193, 0.2);
+          box-shadow: 0 5px 5px 0 rgba(18, 63, 82, 0.035), 0 0 0 1px rgba(176, 181, 193, 0.2);
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 30px 35px;
+  --box-padding-vert: 30px;
+  --box-padding-hori: 35px; }
+  .ahg-card > * {
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important; }
+    .ahg-card > *:first-child {
+      margin-top: 0 !important; }
+    .ahg-card > *:last-child {
+      margin-bottom: 0 !important; }
+  @media screen and (max-width: 782px) {
+    .ahg-card {
+      padding: 20px 23.33333px;
+      --box-padding-vert: 20px;
+      --box-padding-hori: 23.33333px; } }
+  @media screen and (max-width: 600px) {
+    .ahg-card {
+      padding: 35px 17.5px;
+      --box-padding-vert: 35px;
+      --box-padding-hori: 17.5px; } }
+  .ahg-card .ahg-card__image-container {
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto 2em;
+    padding-top: 0; }
+  .ahg-card .ahg-card--image-circle {
+    border-radius: 100%; }
+  .ahg-card .ahg-card__tagline,
+  .ahg-card .ahg-tagline {
+    font-size: 0.85em; }
+  .ahg-card .ahg-button {
+    margin-top: 0;
+    margin-bottom: 0; }
+  .ahg-card .ahg-card__less-des p:last-child,
+  .ahg-card .ahg-card__more-des p:last-child {
+    margin-bottom: 0; }
+
+.ahg-card.ahg-card--more .ahg-card__less-des,
+.ahg-card.ahg-card--more .ahg-card__more-toggle-des {
+  display: none; }
+
+.ahg-card.ahg-card--more .ahg-card__more-des,
+.ahg-card.ahg-card--more .ahg-card__less-toggle-des {
+  display: block !important; }
