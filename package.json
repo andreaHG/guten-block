@@ -9,7 +9,6 @@
 	},
 	"dependencies": {
 		"cgb-scripts": "^1.21.0",
-		"classnames": "^2.2.6",
-		"tar": "^4.4.13"
+		"classnames": "^2.2.6"
 	}
 }
