@@ -1,15 +1,15 @@
 {
-  "name": "ahg-guten-cgb-guten-block",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "start": "cgb-scripts start",
-    "build": "cgb-scripts build",
-    "eject": "cgb-scripts eject"
-  },
-  "dependencies": {
-    "cgb-scripts": "^1.17.0",
-    "classnames": "^2.2.6",
-    "tar": "^4.4.8"
-  }
+	"name": "ahg-guten-cgb-guten-block",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"start": "cgb-scripts start",
+		"build": "cgb-scripts build",
+		"eject": "cgb-scripts eject"
+	},
+	"dependencies": {
+		"cgb-scripts": "^1.21.0",
+		"classnames": "^2.2.6",
+		"tar": "^4.4.13"
+	}
 }
