@@ -32,14 +32,14 @@ const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.b
  */
 registerBlockType( 'cgb/block-ahg-guten', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Staff Member' ), // Block title.
+	title: __( 'Expand Card' ), // Block title.
 	icon: {
 		foreground: '#fff',
 		background: '#8E2DE2',
 		src: 'admin-users',
 	}, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
-	keywords: [ __( 'card' ), __( 'staff-member' ), __( 'team-member' ) ],
+	keywords: [ __( 'card' ), __( 'expand' ), __( 'staff-member' ) ],
 	attributes: {
 		mediaID: {
 			type: 'number',
@@ -53,7 +53,7 @@ registerBlockType( 'cgb/block-ahg-guten', {
 		heading: {
 			source: 'html',
 			selector: '.ahg-card__title',
-			default: __( 'Name' ),
+			default: __( 'Title' ),
 		},
 		tagline: {
 			source: 'html',
@@ -68,18 +68,20 @@ registerBlockType( 'cgb/block-ahg-guten', {
 		moreDes: {
 			source: 'html',
 			selector: '.ahg-card__more-des',
-			multiline: 'p',
 			default: '',
+		},
+		fullDescription: {
+			type: 'string',
 		},
 		moreLabel: {
 			source: 'html',
 			selector: '.ahg-card__more-toggle-des',
-			default: __( 'Show more' ),
+			default: __( 'Read more' ),
 		},
 		lessLabel: {
 			source: 'html',
 			selector: '.ahg-card__less-toggle-des',
-			default: __( 'Show less' ),
+			default: __( 'Read less' ),
 		},
 		headingColor: {
 			type: 'string',
@@ -125,6 +127,7 @@ registerBlockType( 'cgb/block-ahg-guten', {
 			tagline,
 			des,
 			moreDes,
+			fullDescription,
 			moreLabel,
 			lessLabel,
 			mediaID,
@@ -164,6 +167,10 @@ registerBlockType( 'cgb/block-ahg-guten', {
 			setAttributes( {
 				contentAlign: newAlignment === undefined ? 'none' : newAlignment,
 			} );
+		};
+
+		const onChangeMoreDes = text => {
+			setAttributes( { moreDes: text, fullDescription: `${ des } ${ text }` } );
 		};
 
 		return (
@@ -236,7 +243,7 @@ registerBlockType( 'cgb/block-ahg-guten', {
 							/>
 							<RichText
 								tagName="h4"
-								placeholder={ __( 'Name' ) }
+								placeholder={ __( 'Title' ) }
 								className="ahg-card__title"
 								onChange={ text => setAttributes( { heading: text } ) }
 								style={ {
@@ -259,7 +266,6 @@ registerBlockType( 'cgb/block-ahg-guten', {
 								keepPlaceholderOnFocus
 							/>
 							<RichText
-								tagName="p"
 								value={ des }
 								className="ahg-card__less-des"
 								onChange={ text => setAttributes( { des: text } ) }
@@ -286,9 +292,8 @@ registerBlockType( 'cgb/block-ahg-guten', {
 								/>
 							</a>
 							<RichText
-								multiline="p"
 								value={ moreDes }
-								onChange={ text => setAttributes( { moreDes: text } ) }
+								onChange={ onChangeMoreDes }
 								style={ {
 									color: desColor,
 									textAlign: contentAlign,
@@ -314,7 +319,7 @@ registerBlockType( 'cgb/block-ahg-guten', {
 						</Fragment>
 					) : (
 						<div className="static-staff-member">
-							<p>Staff Member: { heading }</p>
+							<p>Title: { heading }</p>
 						</div>
 					) }
 				</div>
@@ -330,6 +335,7 @@ registerBlockType( 'cgb/block-ahg-guten', {
 			tagline,
 			des,
 			moreDes,
+			fullDescription,
 			moreLabel,
 			lessLabel,
 			mediaID,
@@ -390,16 +396,14 @@ registerBlockType( 'cgb/block-ahg-guten', {
 					className="ahg-card__less-des"
 					style={ { color: desColor, textAlign: contentAlign } }
 				>
-					{ ! RichText.isEmpty( des ) && (
-						<RichText.Content multiline="p" value={ des } />
-					) }
+					{ ! RichText.isEmpty( des ) && <RichText.Content value={ des } /> }
 				</div>
 				<div
 					className="ahg-card__more-des"
 					style={ { color: desColor, textAlign: contentAlign, display: 'none' } }
 				>
 					{ ! RichText.isEmpty( moreDes ) && (
-						<RichText.Content multiline="p" value={ moreDes } />
+						<RichText.Content value={ fullDescription } />
 					) }
 				</div>
 				{ /* eslint-disable-next-line jsx-a11y/anchor-is-valid */ }
