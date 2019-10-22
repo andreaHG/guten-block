@@ -5,7 +5,7 @@
  * which makes it higher in priority.
  */
 
-[data-type="ahg/card"] {
+ [data-type="ahg/card"] {
 	[data-is-placeholder-visible="true"] + .editor-rich-text__tinymce {
 		opacity: 0.5;
 	}

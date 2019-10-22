@@ -4,7 +4,7 @@
  * CSS for both Frontend+Backend.
  */
 
-.ahg-card {
+ .ahg-card {
 	border-radius: 4px;
 	margin: 30px 0;
 	overflow: hidden;
@@ -45,26 +45,6 @@
 	.ahg-card__more-des p:last-child {
 		margin-bottom: 0;
 	}
-
-	// This is the button container.
-	// > div:not(.editor-rich-text) {
-	// 	display: flex;
-	// 	.ahg-button--align-center,
-	// 	.ahg-button-center {
-	// 		// Old style.
-	// 		align-self: center;
-	// 	}
-	// 	.ahg-button--align-left,
-	// 	.ahg-button-left {
-	// 		// Old style.
-	// 		align-self: flex-start;
-	// 	}
-	// 	.ahg-button--align-right,
-	// 	.ahg-button-right {
-	// 		// Old style.
-	// 		align-self: flex-end;
-	// 	}
-	// }
 }
 
 .ahg-card.ahg-card--more {

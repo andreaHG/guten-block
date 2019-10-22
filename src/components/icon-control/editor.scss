@@ -1,0 +1,15 @@
+.ahg-icon-control {
+	.ahg-icon-control__icon-button {
+		height: auto;
+		padding: 8px;
+		margin-right: auto;
+		svg {
+			width: 30px;
+			height: 30px;
+		}
+	}
+	.ahg-icon-control__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+}

@@ -1,0 +1,91 @@
+{
+    "name": "cgb/block-ahg-guten",
+    "category": "common",
+    "attributes": {
+		"mediaID": {
+			"type": "number"
+		},
+		"mediaURL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".ahg-card__image-container",
+			"attribute": "data-src"
+		},
+		"heading": {
+			"source": "html",
+			"selector": ".ahg-card__title",
+			"default": "Title"
+		},
+		"tagline": {
+			"source": "html",
+			"selector": ".ahg-card__tagline",
+			"default": "Subtitle for this block"
+		},
+		"des": {
+			"source": "html",
+			"selector": ".ahg-card__less-des",
+			"default": ""
+		},
+		"moreDes": {
+			"source": "html",
+			"selector": ".ahg-card__more-des",
+			"default": ""
+		},
+		"fullDescription": {
+			"type": "string"
+		},
+		"moreLabel": {
+			"source": "html",
+			"selector": ".ahg-card__more-toggle-des",
+            "default": "Read more"
+        },
+		"lessLabel": {
+			"source": "html",
+			"selector": ".ahg-card__less-toggle-des",
+			"default": "Read less"
+		},
+		"headingColor": {
+			"type": "string"
+		},
+		"taglineColor": {
+			"type": "string"
+		},
+		"cardType": {
+			"type": "string",
+			"default": "image"
+		},
+		"cardIcon": {
+			"type": "string"
+		},
+		"iconColor": {
+			"type": "string"
+		},
+		"desColor": {
+			"type": "string"
+		},
+		"shapes": {
+			"type": "string",
+			"default": "circle"
+		},
+		"contentAlign": {
+			"type": "string",
+			"default": "center"
+		},
+		"design": {
+			"type": "string",
+			"default": "basic"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "#FFF"
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 12
+		},
+		"shadow": {
+			"type": "number",
+			"default": 3
+        }
+    }
+}

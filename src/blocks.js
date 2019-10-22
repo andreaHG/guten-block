@@ -9,4 +9,35 @@
  * Webpack is compiling as the input file.
  */
 
-import './block/block.js';
+/**
+ * WordPress dependencies
+ */
+import { registerBlockType } from '@wordpress/blocks';
+import * as expander from './blocks/expander';
+/**
+ * Function to register an individual block.
+ *
+ * @param {Object} block The block to be registered.
+ *
+ */
+const registerBlock = block => {
+	if ( ! block ) {
+		return;
+	}
+
+	const { name, category, settings } = block;
+
+	registerBlockType( name, {
+		category: category,
+		...settings,
+	} );
+};
+
+/**
+ * Function to register blocks provided by AHG.
+ */
+export const registerAHGBlocks = () => {
+	[ expander ].forEach( registerBlock );
+};
+
+registerAHGBlocks();

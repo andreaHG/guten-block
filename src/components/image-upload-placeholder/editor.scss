@@ -53,6 +53,11 @@
 		max-width: none;
 	}
 }
+.ahg-card--image-circle
+.ahg-image-upload-remove {
+	top: 40px;
+	right: 54px;
+}
 // Only display the X button when selected/hovered.
 .editor-block-list__block {
 	&.is-selected,
