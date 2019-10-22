@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: Custom Block - Staff Member
+ * Plugin Name: Custom AHG Blocks 
  * Plugin URI: https://github.com/ahmadawais/create-guten-block/
- * Description: A custom Gutenberg plugin created via create-guten-block.
+ * Description: Custom Gutenberg blocks includes expander card 
  * Author: Andrea Hernandez Guzman
  * Author URI: https://andreahg.me/
- * Version: 1.0.0
+ * Version: 1.1.0
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  *

@@ -27,11 +27,11 @@ export const DEFAULT_ICON_SIZE = 60;
 const { name, category, attributes } = metadata;
 
 const settings = {
-	title: __( 'Expand Card' ), // Block title.
+	title: __( 'Expander Card' ), // Block title.
 	icon: {
 		foreground: '#fff',
 		background: '#8E2DE2',
-		src: 'admin-users',
+		src: 'editor-expand',
 	}, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.,
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [ __( 'card' ), __( 'expand' ), __( 'staff-member' ) ],

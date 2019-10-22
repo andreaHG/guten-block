@@ -50,6 +50,16 @@
 		"taglineColor": {
 			"type": "string"
 		},
+		"cardType": {
+			"type": "string",
+			"default": "image"
+		},
+		"cardIcon": {
+			"type": "string"
+		},
+		"iconColor": {
+			"type": "string"
+		},
 		"desColor": {
 			"type": "string"
 		},
@@ -59,7 +69,7 @@
 		},
 		"contentAlign": {
 			"type": "string",
-			"default": "none"
+			"default": "center"
 		},
 		"design": {
 			"type": "string",

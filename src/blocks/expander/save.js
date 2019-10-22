@@ -2,6 +2,7 @@
 import './styles/style.scss';
 
 import classnames from 'classnames';
+import IconEdit from '../../components/icon-edit';
 
 const { RichText } = wp.editor;
 
@@ -20,6 +21,9 @@ const save = props => {
 		mediaURL,
 		headingColor,
 		taglineColor,
+		cardType,
+		cardIcon,
+		iconColor,
 		desColor,
 		design = 'basic',
 		shapes,
@@ -42,9 +46,13 @@ const save = props => {
 		'ahg-card__image-container',
 		`ahg-card--image-${ shapes }`,
 	] );
+
+	const imageAndURL = cardType === 'image' && mediaURL;
+	const isIcon = cardType === 'icon' && cardIcon;
+
 	return (
 		<div className={ mainClasses } style={ mainStyles } aria-expanded="false">
-			{ mediaURL && (
+			{ imageAndURL && (
 				<div
 					className={ imageClasses }
 					style={ {
@@ -54,6 +62,12 @@ const save = props => {
 					data-src={ mediaURL }
 				/>
 			) }
+			{ isIcon &&
+				<IconEdit.Content
+					color={ iconColor }
+					icon={ cardIcon }
+				/>
+			}
 			{ ! RichText.isEmpty( heading ) && (
 				<RichText.Content
 					tagName="h4"
@@ -72,13 +86,13 @@ const save = props => {
 			) }
 			<div
 				className="ahg-card__less-des"
-				style={ { color: desColor, textAlign: contentAlign } }
+				style={ { color: desColor } }
 			>
 				{ ! RichText.isEmpty( des ) && <RichText.Content value={ des } /> }
 			</div>
 			<div
 				className="ahg-card__more-des"
-				style={ { color: desColor, textAlign: contentAlign, display: 'none' } }
+				style={ { color: desColor, display: 'none' } }
 			>
 				{ ! RichText.isEmpty( moreDes ) && (
 					<RichText.Content value={ fullDescription } />
@@ -88,9 +102,8 @@ const save = props => {
 			<a
 				className="ahg-card__toggle"
 				href="#"
-				style={ { textAlign: contentAlign } }
 			>
-				<div style={ { textAlign: contentAlign } }>
+				<div>
 					<RichText.Content
 						className="ahg-card__more-toggle-des"
 						tagName="span"
@@ -101,7 +114,7 @@ const save = props => {
 					className="ahg-card__less-toggle-des"
 					tagName="span"
 					value={ lessLabel }
-					style={ { display: 'none', textAlign: contentAlign } }
+					style={ { display: 'none' } }
 				/>
 			</a>
 		</div>

@@ -2,7 +2,7 @@
 import './styles/editor.scss';
 
 import classnames from 'classnames';
-import { ImageUploadPlaceholder, DesignPanelBody } from '../../components';
+import { ImageUploadPlaceholder, DesignPanelBody, IconControl, IconEdit } from '../../components';
 
 const {
 	AlignmentToolbar,
@@ -14,7 +14,7 @@ const {
 
 const { Fragment } = wp.element;
 const { __ } = wp.i18n; // Import __() from wp.i18n
-const { RangeControl, SelectControl } = wp.components;
+const { RangeControl, SelectControl, RadioControl } = wp.components;
 
 const edit = props => {
 	const { isSelected, className, setAttributes, attributes } = props;
@@ -25,6 +25,9 @@ const edit = props => {
 		des,
 		moreDes,
 		fullDescription,
+		cardType,
+		cardIcon,
+		iconColor,
 		moreLabel,
 		lessLabel,
 		mediaID,
@@ -55,11 +58,6 @@ const edit = props => {
 		`ahg-card--image-${ shapes }`,
 	] );
 
-	const shape = [
-		{ value: 'square', label: __( 'Square' ) },
-		{ value: 'circle', label: __( 'Circle' ) },
-	];
-
 	const onChangeAlignment = newAlignment => {
 		setAttributes( {
 			contentAlign: newAlignment === undefined ? 'none' : newAlignment,
@@ -68,6 +66,10 @@ const edit = props => {
 
 	const onChangeMoreDes = text => {
 		setAttributes( { moreDes: text, fullDescription: `${ des } ${ text }` } );
+	};
+
+	const onChangeCardType = type => {
+		setAttributes( { cardType: type } );
 	};
 
 	return (
@@ -91,21 +93,43 @@ const edit = props => {
 						min={ 0 }
 						max={ 9 }
 					/>
+					<RadioControl
+						label="Card Type"
+						selected={ cardType }
+						options={ [
+							{ label: 'Image', value: 'image' },
+							{ label: 'Icon', value: 'icon' },
+						] }
+						onChange={ onChangeCardType }
+					/>
+
+					{ cardType === 'image' &&
 					<SelectControl
 						label={ __( 'Image Shape' ) }
 						value={ shapes }
-						options={ shape.map( ( { value, label } ) => ( {
-							value: value,
-							label: label,
-						} ) ) }
+						options={ [
+							{ label: __( 'Square' ), value: 'square' },
+							{ label: __( 'Circle' ), value: 'circle' },
+						] }
 						onChange={ newShape => {
 							setAttributes( { shapes: newShape } );
 						} }
-					/>
+					/> }
+					{ cardType === 'icon' &&
+					<IconControl
+						label={ __( 'Icon' ) }
+						value={ cardIcon }
+						onChange={ icon => setAttributes( { cardIcon: icon } ) }
+					/> }
 				</DesignPanelBody>
 				<PanelColorSettings
-					title={ __( 'Title Colors' ) }
+					title={ __( 'Card Colors' ) }
 					colorSettings={ [
+						{
+							value: iconColor,
+							onChange: colorValue => setAttributes( { iconColor: colorValue } ),
+							label: __( 'Icon Color ' ),
+						},
 						{
 							value: headingColor,
 							onChange: colorValue =>
@@ -129,6 +153,7 @@ const edit = props => {
 			<div className={ mainClasses } style={ mainStyles } aria-expanded="false">
 				{ isSelected ? (
 					<Fragment>
+						{ cardType === 'image' &&
 						<ImageUploadPlaceholder
 							className={ imageClasses }
 							imageID={ mediaID }
@@ -137,7 +162,13 @@ const edit = props => {
 							onChange={ ( { url, id } ) =>
 								setAttributes( { mediaURL: url, mediaID: id } )
 							}
-						/>
+						/> }
+						{ cardType === 'icon' &&
+							<IconEdit
+								color={ iconColor }
+								icon={ cardIcon }
+							/>
+						}
 						<RichText
 							tagName="h4"
 							placeholder={ __( 'Title' ) }
@@ -169,7 +200,6 @@ const edit = props => {
 							formattingControls={ [ 'bold', 'italic', 'strikethrough' ] }
 							style={ {
 								color: desColor,
-								textAlign: contentAlign,
 							} }
 							placeholder={ __(
 								'Short description that can be expanded to show more details or links.'
@@ -183,7 +213,6 @@ const edit = props => {
 								onChange={ text => setAttributes( { moreLabel: text } ) }
 								formattingControls={ [ 'bold', 'italic', 'strikethrough' ] }
 								className="ahg-expand__more-toggle-des"
-								style={ { textAlign: contentAlign } }
 								placeholder={ __( 'View more button' ) }
 								keepPlaceholderOnFocus
 							/>
@@ -193,7 +222,6 @@ const edit = props => {
 							onChange={ onChangeMoreDes }
 							style={ {
 								color: desColor,
-								textAlign: contentAlign,
 							} }
 							className="ahg-expand__more-des"
 							placeholder={ __(
@@ -208,7 +236,6 @@ const edit = props => {
 								onChange={ text => setAttributes( { lessLabel: text } ) }
 								formattingControls={ [ 'bold', 'italic', 'strikethrough' ] }
 								className="ahg-expand__less-toggle-text"
-								style={ { textAlign: contentAlign } }
 								placeholder={ __( 'View less button' ) }
 								keepPlaceholderOnFocus
 							/>

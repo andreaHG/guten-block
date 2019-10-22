@@ -12,8 +12,8 @@
 /**
  * WordPress dependencies
  */
-import { registerBlockType } from "@wordpress/blocks";
-import * as expand from "./blocks/expand";
+import { registerBlockType } from '@wordpress/blocks';
+import * as expander from './blocks/expander';
 /**
  * Function to register an individual block.
  *
@@ -21,23 +21,23 @@ import * as expand from "./blocks/expand";
  *
  */
 const registerBlock = block => {
-	if (!block) {
+	if ( ! block ) {
 		return;
 	}
 
 	const { name, category, settings } = block;
 
-	registerBlockType(name, {
+	registerBlockType( name, {
 		category: category,
-		...settings
-	});
+		...settings,
+	} );
 };
 
 /**
  * Function to register blocks provided by AHG.
  */
 export const registerAHGBlocks = () => {
-	[expand].forEach(registerBlock);
+	[ expander ].forEach( registerBlock );
 };
 
 registerAHGBlocks();
