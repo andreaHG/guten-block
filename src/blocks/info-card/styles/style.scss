@@ -1,0 +1,17 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+ .ahg-info-card {
+	border-radius: 4px;
+	margin: 30px 0;
+	overflow: hidden;
+	@include baseBlock();
+	@include box();
+
+	.ahg-info-card__des p:last-child {
+		margin-bottom: 0;
+	}
+}
