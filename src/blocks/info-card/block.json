@@ -28,7 +28,7 @@
 		},
 		"buttonText": {
 			"source": "html",
-			"selector": ".ahg-info-card__url-text span",
+			"selector": ".ahg-info-card__url-text",
 			"default": "Learn more"
 		},
 		"buttonTextColor": {
