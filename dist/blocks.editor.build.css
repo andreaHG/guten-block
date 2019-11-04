@@ -659,9 +659,9 @@ form[class*="ahg-"][class*="-link"],
   display: none; }
 
 .cardset-static {
-  text-align: center;
-  -ms-flex-pack: center;
-      justify-content: center;
   padding: 20px;
-  background: #eee;
-  border-radius: 8px; }
+  background: #fff;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black; }

@@ -331,7 +331,8 @@ form[class*="ahg-"][class*="-link"],
   overflow: hidden;
   padding: 30px 35px;
   --box-padding-vert: 30px;
-  --box-padding-hori: 35px; }
+  --box-padding-hori: 35px;
+  padding: 20px 20px; }
   .ahg-info-card > * {
     margin-top: 0 !important;
     margin-bottom: 1rem !important; }

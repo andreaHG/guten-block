@@ -36,14 +36,14 @@ const edit = props => {
 			<div className={ mainClasses }>
 				{ isSelected ? (
 					<div className="cardset-selected">
-						<h4>Interactive Card Set</h4>
+						<h4>Info Card Set</h4>
 						<InnerBlocks
 							allowedBlocks={ [ 'cgb/info-card-ahg' ] }
 						/>
 					</div>
 				) : (
 					<div className="cardset-static">
-						<h4>Interactive Card Set</h4>
+						<h4>Info Card Set</h4>
 						<InnerBlocks
 							allowedBlocks={ [ 'cgb/info-card-ahg' ] }
 						/>

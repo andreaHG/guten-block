@@ -10,6 +10,7 @@
 	overflow: hidden;
 	@include baseBlock();
 	@include box();
+	padding: 20px 20px;
 
 	.ahg-info-card__des p:last-child {
 		margin-bottom: 0;
