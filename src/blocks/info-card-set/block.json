@@ -1,0 +1,10 @@
+{
+	"name": "cgb/info-card-set-ahg",
+	"category": "common",
+	"attributes": {
+        "columnNumber": {
+            "type": "number",
+            "default": 3
+        }
+	}
+}
