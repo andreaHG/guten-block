@@ -1,0 +1,31 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+ [data-type="ahg/info-card-set"] {
+	[data-is-placeholder-visible="true"] + .editor-rich-text__tinymce {
+		opacity: 0.5;
+	}
+
+	// Only show placeholder text while selected or typing.
+	&:not(.is-selected):not(.is-typing) {
+		[data-is-placeholder-visible="true"] + .editor-rich-text__tinymce {
+			display: none;
+		}
+		[data-is-placeholder-visible="true"] {
+			display: none;
+		}
+	}
+}
+
+.cardset-static {
+	padding: 20px;
+	background: #fff;
+	border-radius: 8px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+}

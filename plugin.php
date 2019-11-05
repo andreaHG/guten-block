@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom AHG Blocks 
  * Plugin URI: https://github.com/ahmadawais/create-guten-block/
- * Description: Custom Gutenberg blocks includes expander card 
+ * Description: Custom Gutenberg blocks includes expander card, info card, and info card set
  * Author: Andrea Hernandez Guzman
  * Author URI: https://andreahg.me/
  * Version: 1.1.0

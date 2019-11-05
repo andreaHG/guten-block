@@ -14,6 +14,8 @@
  */
 import { registerBlockType } from '@wordpress/blocks';
 import * as expander from './blocks/expander';
+import * as infoCard from './blocks/info-card';
+import * as infoCardSet from './blocks/info-card-set';
 /**
  * Function to register an individual block.
  *
@@ -37,7 +39,7 @@ const registerBlock = block => {
  * Function to register blocks provided by AHG.
  */
 export const registerAHGBlocks = () => {
-	[ expander ].forEach( registerBlock );
+	[ expander, infoCard, infoCardSet ].forEach( registerBlock );
 };
 
 registerAHGBlocks();

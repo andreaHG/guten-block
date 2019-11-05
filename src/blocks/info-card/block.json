@@ -1,0 +1,59 @@
+{
+	"name": "cgb/info-card-ahg",
+	"category": "common",
+	"attributes": {
+		"heading": {
+			"source": "html",
+			"selector": ".ahg-info-card__title",
+			"default": "Title"
+		},
+		"des": {
+			"source": "html",
+			"selector": ".ahg-info-card__des",
+			"default": ""
+		},
+		"headingColor": {
+			"type": "string",
+			"default": "#016888"
+		},
+		"desColor": {
+			"type": "string"
+		},
+		"buttonURL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".ahg-info-card__url",
+			"attribute": "href",
+			"default": ""
+		},
+		"buttonText": {
+			"source": "html",
+			"selector": ".ahg-info-card__url-text",
+			"default": "Learn more"
+		},
+		"buttonTextColor": {
+			"type": "string",
+			"default": "#68089e"
+		},
+		"contentAlign": {
+			"type": "string",
+			"default": "left"
+		},
+		"design": {
+			"type": "string",
+			"default": "basic"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "#eff3f4"
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 12
+		},
+		"shadow": {
+			"type": "number",
+			"default": 3
+		}
+	}
+}
