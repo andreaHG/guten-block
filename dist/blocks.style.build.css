@@ -319,6 +319,7 @@ form[class*="ahg-"][class*="-link"],
  * CSS for both Frontend+Backend.
  */
 .ahg-info-card {
+  padding: 20px 20px;
   border-radius: 4px;
   margin: 30px 0;
   overflow: hidden;
@@ -331,8 +332,7 @@ form[class*="ahg-"][class*="-link"],
   overflow: hidden;
   padding: 30px 35px;
   --box-padding-vert: 30px;
-  --box-padding-hori: 35px;
-  padding: 20px 20px; }
+  --box-padding-hori: 35px; }
   .ahg-info-card > * {
     margin-top: 0 !important;
     margin-bottom: 1rem !important; }
