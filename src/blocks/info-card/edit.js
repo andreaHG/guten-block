@@ -19,7 +19,7 @@ const { RangeControl } = wp.components;
 
 const edit = props => {
 	const { isSelected, className, setAttributes, attributes } = props;
-
+	console.log('version 1.1.1')
 	const {
 		heading,
 		des,
