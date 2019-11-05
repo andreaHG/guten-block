@@ -64,7 +64,7 @@ const IconControl = withInstanceId( withState( {
 		clickedOnButton,
 		setState,
 	} = props;
-	console.log('what value?',props.value);
+
 	const selectedIcon = getIconArray( props.value );
 	const isValidIcon = isValidIconValue( props.value );
 
